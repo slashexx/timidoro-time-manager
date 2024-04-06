@@ -2,9 +2,8 @@
 let isTimerRunning=false;
 
 function stopTimer() {
-    clearInterval(timer); // Clear the interval
-    isTimerRunning = false; // Update the state
-}
+    clearInterval(timer); 
+    isTimerRunning = false;}
 
 
 
@@ -146,3 +145,32 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden')
 
 hiddenElements.forEach((el) => observer.observe(el))
+
+// TOGGLE BUTTON
+document.addEventListener('DOMContentLoaded', function() {
+    const h1Element = document.querySelector('.headtit');
+    const h2Elements = document.querySelectorAll('.headtit'); // Select all <h2> elements with the class "headtit"
+
+    const toggleCheckbox = document.querySelector('.bb8-toggle__checkbox');
+    const informationSection = document.querySelector('.information');
+
+    toggleCheckbox.addEventListener('change', function() {
+        if (toggleCheckbox.checked) {
+            h1Element.style.color = 'rgba(148, 116, 235, 0.849)';
+            h2Elements.forEach(function(h2Element) {
+                h2Element.style.color = 'rgba(148, 116, 235, 0.849)';
+            });
+            informationSection.style.color = '#ffffff';
+            informationSection.style.backgroundColor = '#131316';
+        } else {
+            h1Element.style.color = 'rgb(100, 61, 136)';
+            h2Elements.forEach(function(h2Element) {
+                h2Element.style.color = 'rgb(100, 61, 136)';
+            });
+            informationSection.style.color = '#131316';
+            informationSection.style.backgroundColor = '#ffffff';
+        }
+    });
+});
+
+
