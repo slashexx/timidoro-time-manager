@@ -157,14 +157,17 @@ button {
 
 .information {
     position: absolute;
+    /* display: grid;
+    place-items: center;
+    align-items: center; */
+    min-height: 100vh;
     top: 100vh; /* Position it below the initial screen */
     font-size: 20px;
     font-family:Arial, Helvetica, sans-serif;
     left: 0;
     width: 100%;
-    text-align: left;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255); /* Background color */
+    color: #ffffff;
+    background-color: #131316; /* Background color */
     padding: 20px;
     padding-left: 280px;
     padding-right: 300px;
@@ -184,20 +187,20 @@ li {
     gap: 100px;
     left: 0rem;
     bottom: 0;
-    background-color: rgb(255, 255, 252); /* Set background color */
+    background-color: #131316; /* Set background color */
     width: 100%;
     padding: 10px;
 }
 
-.navigator a {
+a {
     color: grey; /* Set text color */
     text-decoration: none; /* Remove underline */
     font-family: 'Varela Round';
     font-size: 18px;
 }
 
-.navigator a:hover {
-    color: rgb(45, 27, 95); /* Change color on hover */
+a:hover {
+    color: rgba(148, 116, 235, 0.849); /* Change color on hover */
 }
 .animated-text {
     opacity: 0;
@@ -229,4 +232,34 @@ li {
 }
 
 
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
 
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+
+/* DIFFERENT SCROLLBAR */
+
+body::-webkit-scrollbar{
+    width: 0.35rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb{
+    background:#6649b8;
+}
+
+
+#display {
+    user-select: none; /* Prevent text selection */
+}

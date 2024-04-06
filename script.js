@@ -57,6 +57,14 @@ function updateDisplay() {
     const seconds = time % 60;
     display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
+    if(timerMode=="pomo"){
+    document.title = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} - Focus !`;
+    } else if (timerMode=="short") {
+        document.title = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} - Relax!`;    
+    } else {
+        document.title = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} - Take it easy!`; 
+    }
+
     if (time <= 0) {
         clearInterval(timer);
         beginBtn.disabled = false;
@@ -96,34 +104,54 @@ beginBtn.addEventListener('click', startTimer);
 
 
 pomodoroBtn.addEventListener('click', function() {
-    timerMode="pomo"
+    timerMode = "pomo";
     setTimePomo();
-    if(isTimerRunning){ 
+    if (!isTimerRunning) {
+        startTimer();
+    } else {
         stopTimer();
-     } // Stop the timer if running
-     isTimerRunning=false;
-    display.textContent = "25:00"; // Update timer display without starting the timer
+        startTimer();
+    }
 });
 
 shortBreakBtn.addEventListener('click', function() {
-    timerMode="short"
+    timerMode = "short";
     setTimeShort();
-    if(isTimerRunning){
+    if (!isTimerRunning) {
+        startTimer();
+    } else {
         stopTimer();
+        startTimer();
     }
-    isTimerRunning=false;
-    // clearInterval(timer); // Stop the timer if running
-    display.textContent = "05:00"; // Update timer display without starting the timer
 });
-
 
 longBreakBtn.addEventListener('click', function() {
-    timerMode="long";
+    timerMode = "long";
     setTimeLong();
-    if(isTimerRunning){
+    if (!isTimerRunning) {
+        startTimer();
+    } else {
         stopTimer();
+        startTimer();
     }
-    isTimerRunning=false;
-    // clearInterval(timer); // Stop the timer if running
-    display.textContent = "15:00"
 });
+
+
+
+// TEXT ANIMATIONS 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry);
+
+        if(entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+        // } else{
+        //     entry.target.classList.remove('show');
+        // }
+    })
+})
+
+const hiddenElements = document.querySelectorAll('.hidden')
+
+hiddenElements.forEach((el) => observer.observe(el))

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timidoro counter</title>
     <link href="style.css" rel="stylesheet">
+    <!-- <script defer src="app.js"></script> -->
 </head>
+
 <body>
-    
+
     <div class="spinner-container">
         <div class="spinner">
             <div class="spinner">
@@ -28,77 +31,92 @@
         Timidoro time counter
     </header>
 
-<main>
+    <main>
+
+        <div class="timer">
+            <div class="timesel">
+                <button class="pomodoro navbtn">Pomodoro</button>
+                <button class="shortbrk navbtn">Short break</button>
+                <button class="longbrk navbtn">Long break</button>
+
+            </div>
+            <div id="display">25:00</div>
+            <button class="btn begin">Start</button>
+        </div>
+    </main>
+
+
+    <div class="tasks">
+
+    </div>
+
+    <div class="information">
         
-<div class="timer">
-    <div class="timesel">
-        <button class="pomodoro navbtn">Pomodoro</button>
-        <button class="shortbrk navbtn">Short break</button>
-        <button class="longbrk navbtn">Long break</button>
-     
-    </div>
-        <div id="display">25:00</div>
-        <button class="btn begin">Start</button>
-    </div>
-</main>
+            <section class="hidden">
+                <h1 style="font-size: 2em; color: rgba(148, 116, 235, 0.849); font-family: 'Varela Round';"><b>A
+                        web-based pomodoro timer to boost your productivity.</b></h1>
+                <br>
+                <h2 style="color: rgba(148, 116, 235, 0.849); font-family: 'Varela Round';">What is Timidoro ?</h2>
+                <p>Timidoro is a web-based tool that utilizes the Pomodoro Technique, a time management method developed
+                    by Francesco Cirillo.</p>
+                <p>With Timidoro, users can set customizable timers for work sessions, study sessions, breaks, or any
+                    other activity requiring time management.</p>
+                <p>The application provides features like countdown timers, notifications etc. to keep users on track
+                    with their schedule.</p>
+            </section>
+            <br>
+            <section class="hidden">
+            <h2 style="color: rgba(148, 116, 235, 0.849); font-family: 'Varela Round';"><b>What is the Pomodoro
+                    Technique ?</b></h2>
+        
 
+        
+            <p>It is a technique designed to help individuals enhance their productivity and focus by breaking work into
+                intervals, traditionally 25 minutes<br> in length, separated by short breaks.</p>
+            <p>Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen
+                timer that Cirillo used as a university student. <br> - <a
+                    href="https://en.wikipedia.org/wiki/Pomodoro_Technique"> Wikipedia</a></p>
+            <br>
+       
+    </section>
 
-<div class="tasks">
-
-</div>
-
-<div class="information">
-    <div class="animated-text">
-    <h1 style="font-size: 2em; color: rgb(45, 27, 95); font-family: 'Varela Round';"><b>A web-based pomodoro timer to boost your productivity.</b></h1>
+    <section class="hidden">
+       
+            <h2 style="color: rgba(148, 116, 235, 0.849); font-family: 'Varela Round';">How to use the Pomodoro Timer?
+            </h2>
+            <ul type='dot'>
+                <li>Add tasks to work on today
+                <li>Set estimate pomodoros (1 = 25min of work) for each tasks
+                <li>Select a task to work on
+                <li>Start timer and focus on the task for 25 minutes
+                <li>Take a break for 5 minutes when the alarm ring
+                <li>Iterate 3-5 until you finish the tasks
+            </ul>
+        
+    </section>
         <br>
-        <h2 style="color: rgb(45, 27, 95); font-family: 'Varela Round';">What is Timidoro ?</h2>
-        <p>Timidoro is a web-based tool that utilizes the Pomodoro Technique, a time management method developed by Francesco Cirillo.</p>
-        <p>With Timidoro, users can set customizable timers for work sessions, study sessions, breaks, or any other activity requiring time management.</p>
-        <p>The application provides features like countdown timers, notifications etc. to keep users on track with their schedule.</p>
-        <br>
 
-        <h2 style="color: rgb(45, 27, 95); font-family: 'Varela Round';"><b>What is the Pomodoro Technique ?</b></h2> 
-    </div>
 
-    <div class="animated-text">
-        <p>It is a technique designed to help individuals enhance their productivity and focus by breaking work into intervals, traditionally 25 minutes<br> in length, separated by short breaks.</p>
-        <p>Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student. <br> - <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique"> Wikipedia</a></p>
-        <br>
-    </div>
+        <div class="navigator">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contacts</a>
+            <a href="terms.html">Terms</a>
+            <a href="privacypolicy.html">Privacy</a>
+        </div>
 
-    <div class="animated-text">
-        <h2 style="color: rgb(45, 27, 95); font-family: 'Varela Round';">How to use the Pomodoro Timer?</h2>
-        <ul type='dot'>
-            <li>Add tasks to work on today
-            <li>Set estimate pomodoros (1 = 25min of work) for each tasks
-            <li>Select a task to work on
-            <li>Start timer and focus on the task for 25 minutes
-            <li>Take a break for 5 minutes when the alarm ring
-            <li>Iterate 3-5 until you finish the tasks
-        </ul>
-    </div>
-    <br>
-    
+        <div class="love">
+            Made with &lt;3 by Dhruv puri
+        </div>
 
-    <div class="navigator">
-        <a href="index.html">Home</a> 
-        <a href="contact.html">Contacts</a>
-        <a href="terms.html">Terms</a>
-        <a href="privacypolicy.html">Privacy</a>
-    </div>
 
-    <div class="love">
-        Made with &lt;3 by Dhruv puri
     </div>
 
 
-</div>
 
 
 
 
-
-
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </body>
+
 </html>
