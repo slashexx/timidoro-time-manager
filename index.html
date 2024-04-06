@@ -45,10 +45,24 @@
         </div>
     </main>
 
-
     <div class="tasks">
+    <div class="container">
+        <input required="" type="text" name="text" class="input" maxlength="20">
+        <label class="label">What do you want to do today ?</label>
+        <button class="addtsk" onclick="addTask()">Add Task</button>
+
+      </div>
+    </div>
+    <div class="yourtasks">
+        <span class="currenttsk">Your tasks :-</span> <br>
+        <!-- <p class="default-text" style="display: block;">You don't have any tasks</p> -->
+        <ul id="taskList"></ul>
 
     </div>
+    
+
+
+
 
     <div class="information">
         <label class="bb8-toggle">

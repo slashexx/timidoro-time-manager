@@ -149,13 +149,15 @@ hiddenElements.forEach((el) => observer.observe(el))
 // TOGGLE BUTTON
 document.addEventListener('DOMContentLoaded', function() {
     const h1Element = document.querySelector('.headtit');
-    const h2Elements = document.querySelectorAll('.headtit'); // Select all <h2> elements with the class "headtit"
+    const h2Elements = document.querySelectorAll('.headtit'); 
+    const navele = document.querySelector('.navigator');
 
     const toggleCheckbox = document.querySelector('.bb8-toggle__checkbox');
     const informationSection = document.querySelector('.information');
 
     toggleCheckbox.addEventListener('change', function() {
         if (toggleCheckbox.checked) {
+            navele.style.backgroundColor='#131316'
             h1Element.style.color = 'rgba(148, 116, 235, 0.849)';
             h2Elements.forEach(function(h2Element) {
                 h2Element.style.color = 'rgba(148, 116, 235, 0.849)';
@@ -163,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
             informationSection.style.color = '#ffffff';
             informationSection.style.backgroundColor = '#131316';
         } else {
+            navele.style.backgroundColor= '#ffffff'
             h1Element.style.color = 'rgb(100, 61, 136)';
             h2Elements.forEach(function(h2Element) {
                 h2Element.style.color = 'rgb(100, 61, 136)';
@@ -174,3 +177,62 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// Function to add a task
+
+let doesTaskExist = false;
+
+function addTask() {
+    var taskInput = document.querySelector('.input');
+    var taskName = taskInput.value.trim();
+    
+    if (taskName === "") {
+        alert("Please enter a task.");
+        return;
+    }
+
+    var taskList = document.getElementById("taskList");
+    var taskItem = document.createElement("li");
+    taskItem.innerHTML = ` 
+    <input type="checkbox" onchange="toggleTask(this)">
+    <div id="checklist">
+        <span class="taskname">${taskName}</span> 
+        <button class="removebtn" onclick="removeTask(this)">Remove</button> 
+    </div>
+    `;
+    taskList.appendChild(taskItem);
+
+    taskInput.value = ""; // Clear input field after adding task
+}
+
+document.querySelector('.input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        addTask();
+    }
+});
+
+const defaultText = document.querySelector('.default-text').style;
+
+if(doesTaskExist==true){
+    defaultText.display = none;
+} else {
+    defaultText.display = block;
+}
+
+// Function to remove a task
+function removeTask(button) {
+    var taskItem = button.closest('li'); // Find the closest <li> ancestor of the button
+    if (taskItem) {
+        taskItem.remove(); // Remove the <li> element
+    }
+}
+
+// Function to toggle task completion
+function toggleTask(checkbox) {
+    var taskItem = checkbox.parentNode;
+    var taskName = taskItem.querySelector('span');
+    if (checkbox.checked) {
+        taskName.style.textDecoration = "line-through";
+    } else {
+        taskName.style.textDecoration = "none";
+    }
+}

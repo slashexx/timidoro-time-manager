@@ -34,7 +34,7 @@ header:hover {
 main {
     position: absolute;
     width: 50rem;
-    height: 30rem;
+    height: 35rem;
     top: 10%;
     left: 18rem;
     background-color: rgba(255, 255, 255, 0.12);
@@ -267,10 +267,115 @@ body::-webkit-scrollbar-thumb{
 
 
 
+.currenttsk {
+  position: absolute;
+  font-family: "Varela Round";
+  color: rgba(191, 123, 255, 0.781); /* Set the color with alpha channel */
+  top: 15%;
+  left: 5.7%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 999; /* Ensure the header appears above other elements */
+  text-shadow: 0 0 0.5em var(--glow-color);
+  transition: all 0.3s;
+  padding-bottom: 20px;
+}
+
+.currenttsk:hover {
+  color:rgb(217, 176, 255);
+  text-shadow: 0 0 0.5em var(--glow-color), 0 0 4em var(--glow-spread-color);
+}
+
+.tasks {
+  position: relative;
+  font-family: 'Varela Round';
+  width: fit-content;
+  top: 70vh;
+  left: 85vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  color: white;
+}
+
+.container .label {
+  font-size: 14px;
+  padding-left: 10px;
+  position: absolute;
+  top: 13px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.input {
+  width: 220px;
+  height: 45px;
+  border: none;
+  outline: none;
+  padding: 0px 7px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  background-color: transparent;
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.input:focus {
+  border: 2px solid transparent;
+  color: #fff;
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4),
+  inset 3px 3px 10px rgba(0,0,0,1),
+  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.container .input:valid ~ .label,
+.container .input:focus ~ .label {
+  transition: 0.3s;
+  padding-left: 2px;
+  transform: translateY(-35px);
+}
+
+.container .input:valid,
+.container .input:focus {
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4),
+  inset 3px 3px 10px rgba(0,0,0,1),
+  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+.removebtn {
+  font-size: 10px;
+  position: absolute;
+  left: 15%;
+}
+
+#taskList {
+  list-style: none;
+  padding-left: 0;
+}
+
+#taskList li {
+  display: flex; /* Display list items as flex containers */
+  align-items: center; /* Align items vertically within each list item */
+  gap: 10px; /* Adjust the gap between checkbox and task name */
+  margin-bottom: 15px;
+}
+
+.taskname {
+  font-family: "Varela Round";
+  color: #ffffff;
+}
+
 .bb8-toggle {
     --toggle-size: 5px;
     position: absolute;
-    left: 0%;
+    left: 21%;
     --toggle-width: 10.625em;
     --toggle-height: 5.625em;
     --toggle-offset: calc((var(--toggle-height) - var(--bb8-diameter)) / 2);
@@ -292,6 +397,7 @@ body::-webkit-scrollbar-thumb{
   }
   
   .bb8-toggle {
+    /* --toggle-offset: calc((var(--toggle-height) - var(--bb8-diameter)) / 2 + 100px); */
     cursor: pointer;
     margin-top: var(--margin-top-for-head);
     font-size: var(--toggle-size);
