@@ -106,33 +106,24 @@ beginBtn.addEventListener('click', startTimer);
 pomodoroBtn.addEventListener('click', function() {
     timerMode = "pomo";
     setTimePomo();
-    if (!isTimerRunning) {
-        startTimer();
-    } else {
+    if (isTimerRunning){
         stopTimer();
-        startTimer();
     }
 });
 
 shortBreakBtn.addEventListener('click', function() {
     timerMode = "short";
     setTimeShort();
-    if (!isTimerRunning) {
-        startTimer();
-    } else {
+    if(isTimerRunning){
         stopTimer();
-        startTimer();
     }
 });
 
 longBreakBtn.addEventListener('click', function() {
     timerMode = "long";
     setTimeLong();
-    if (!isTimerRunning) {
-        startTimer();
-    } else {
+    if (isTimerRunning){
         stopTimer();
-        startTimer();
     }
 });
 
