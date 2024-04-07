@@ -67,17 +67,24 @@ function updateDisplay() {
     if (time <= 0) {
         clearInterval(timer);
         beginBtn.disabled = false;
-        alert("Time's up!");
+        document.title = "Time's up !"
+        playSound('https://actions.google.com/sounds/v1/cartoon/mechanical_clock_ring.ogg', 10)
     } else {
             time--;
         }
 } 
 
+function playSound(soundUrl, duration){
+    const audio = new Audio(soundUrl)
+    audio.play();
+    setTimeout(() => audio.pause(), duration*1000);
+}
+
 function startTimer() {
+    playSound('https://actions.google.com/sounds/v1/weapons/revolver_cylinder_click_series.ogg',1.2)
     if (!isTimerRunning) {
-        isTimerRunning = true; // Update the state
-        timer = setInterval(updateDisplay, 1000); // Start the timer
-        // beginBtn.disabled = true; // Disable the "Begin" button
+        isTimerRunning = true; 
+        timer = setInterval(updateDisplay, 1000); 
     }
 }
 
@@ -201,7 +208,7 @@ function addTask() {
     `;
     taskList.appendChild(taskItem);
 
-    taskInput.value = ""; // Clear input field after adding task
+    taskInput.value = ""; 
 }
 
 document.querySelector('.input').addEventListener('keypress', function(event) {
@@ -220,9 +227,9 @@ if(doesTaskExist==true){
 
 // Function to remove a task
 function removeTask(button) {
-    var taskItem = button.closest('li'); // Find the closest <li> ancestor of the button
+    var taskItem = button.closest('li'); 
     if (taskItem) {
-        taskItem.remove(); // Remove the <li> element
+        taskItem.remove(); 
     }
 }
 

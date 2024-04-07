@@ -13,13 +13,13 @@ body {
 header {
     position: absolute;
     font-family: "Varela Round";
-    color: rgba(191, 123, 255, 0.781); /* Set the color with alpha channel */
+    color: rgba(191, 123, 255, 0.781); 
     top: 1%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 30px;
     font-weight: bold;
-    z-index: 999; /* Ensure the header appears above other elements */
+    z-index: 999; 
     text-shadow: 0 0 0.5em var(--glow-color);
     transition: all 0.3s;
     padding-bottom: 20px;
@@ -161,13 +161,13 @@ button {
     place-items: center;
     align-items: center; */
     min-height: 100vh;
-    top: 100vh; /* Position it below the initial screen */
+    top: 100vh; 
     font-size: 20px;
     font-family:Arial, Helvetica, sans-serif;
     left: 0;
     width: 100%;
     color: #000000;
-    background-color: #ffffff; /* Background color */
+    background-color: #ffffff; 
     padding: 20px;
     padding-left: 280px;
     padding-right: 300px;
@@ -270,13 +270,13 @@ body::-webkit-scrollbar-thumb{
 .currenttsk {
   position: absolute;
   font-family: "Varela Round";
-  color: rgba(191, 123, 255, 0.781); /* Set the color with alpha channel */
+  color: rgba(191, 123, 255, 0.781); 
   top: 15%;
   left: 5.7%;
   transform: translateX(-50%);
   font-size: 24px;
   font-weight: bold;
-  z-index: 999; /* Ensure the header appears above other elements */
+  z-index: 999; 
   text-shadow: 0 0 0.5em var(--glow-color);
   transition: all 0.3s;
   padding-bottom: 20px;
