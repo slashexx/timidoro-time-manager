@@ -135,7 +135,7 @@ longBreakBtn.addEventListener('click', function() {
 
 
 
-// TEXT ANIMATIONS 
+// // TEXT ANIMATIONS 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         console.log(entry);
